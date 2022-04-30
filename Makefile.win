@@ -1,0 +1,63 @@
+# Project: Teste
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o lib/fase.o lib/figura.o lib/jogo.o lib/buraco.o lib/buracos.o lib/jogador.o lib/Jogadores.o lib/sprite.o lib/chandsfile.o lib/chandsfilelog.o lib/chandswela.o $(RES)
+LINKOBJ  = main.o lib/fase.o lib/figura.o lib/jogo.o lib/buraco.o lib/buracos.o lib/jogador.o lib/Jogadores.o lib/sprite.o lib/chandsfile.o lib/chandsfilelog.o lib/chandswela.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lmingw32 -lSDLmain -lSDL -lSDL_image  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = Teste.exe
+CXXFLAGS = $(CXXINCS) -lmingw32 -lSDLmain -lSDL -lSDL_image  
+CFLAGS = $(INCS) -lmingw32 -lSDLmain -lSDL -lSDL_image  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Teste.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Teste.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+lib/fase.o: lib/fase.cpp
+	$(CPP) -c lib/fase.cpp -o lib/fase.o $(CXXFLAGS)
+
+lib/figura.o: lib/figura.cpp
+	$(CPP) -c lib/figura.cpp -o lib/figura.o $(CXXFLAGS)
+
+lib/jogo.o: lib/jogo.cpp
+	$(CPP) -c lib/jogo.cpp -o lib/jogo.o $(CXXFLAGS)
+
+lib/buraco.o: lib/buraco.cpp
+	$(CPP) -c lib/buraco.cpp -o lib/buraco.o $(CXXFLAGS)
+
+lib/buracos.o: lib/buracos.cpp
+	$(CPP) -c lib/buracos.cpp -o lib/buracos.o $(CXXFLAGS)
+
+lib/jogador.o: lib/jogador.cpp
+	$(CPP) -c lib/jogador.cpp -o lib/jogador.o $(CXXFLAGS)
+
+lib/Jogadores.o: lib/Jogadores.cpp
+	$(CPP) -c lib/Jogadores.cpp -o lib/Jogadores.o $(CXXFLAGS)
+
+lib/sprite.o: lib/sprite.cpp
+	$(CPP) -c lib/sprite.cpp -o lib/sprite.o $(CXXFLAGS)
+
+lib/chandsfile.o: lib/chandsfile.cpp
+	$(CPP) -c lib/chandsfile.cpp -o lib/chandsfile.o $(CXXFLAGS)
+
+lib/chandsfilelog.o: lib/chandsfilelog.cpp
+	$(CPP) -c lib/chandsfilelog.cpp -o lib/chandsfilelog.o $(CXXFLAGS)
+
+lib/chandswela.o: lib/chandswela.cpp
+	$(CPP) -c lib/chandswela.cpp -o lib/chandswela.o $(CXXFLAGS)
